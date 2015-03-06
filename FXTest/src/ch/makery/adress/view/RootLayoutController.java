@@ -61,6 +61,10 @@ public class RootLayoutController {
 		}
 	}
 	
+	@FXML
+	private void handleShowStatistics() {
+		mainApp.showBirthdayStatistics();
+	}
 	
 	
 }

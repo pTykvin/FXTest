@@ -30,6 +30,7 @@ import javax.xml.bind.Unmarshaller;
 
 import ch.makery.adress.model.Person;
 import ch.makery.adress.model.PersonListWrapper;
+import ch.makery.adress.view.BirthdayStatisticsController;
 import ch.makery.adress.view.PersonEditDialogController;
 import ch.makery.adress.view.PersonOverviewController;
 import ch.makery.adress.view.RootLayoutController;
@@ -81,9 +82,8 @@ public class MainApp extends Application {
 
 			PersonOverviewController controller = loader.getController();
 			controller.setMainApp(this);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (IOException ex) {
+			showExceptionAlert(ex);
 		}
 	}
 
@@ -101,10 +101,14 @@ public class MainApp extends Application {
 			controller.setMainApp(this);
 			
 			primaryStage.show();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		} catch (IOException ex) {
+			showExceptionAlert(ex);
 		}
+		
+	    File file = getPersonFilePath();
+	    if (file != null) {
+	        loadPersonDataFromFile(file);
+	    }
 	}
 
 	public boolean showPersonEditDialog(Person person) {
@@ -128,10 +132,11 @@ public class MainApp extends Application {
 			dialogStage.showAndWait();
 			
 			return controller.isOkClicked();
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (IOException ex) {
+			showExceptionAlert(ex);
 			return false;
 		}
+
 	}
 
 	public Stage getPrimaryStage() {
@@ -199,6 +204,7 @@ public class MainApp extends Application {
 	
 	public void loadPersonDataFromFile(File file) {
 		try {
+			
 			JAXBContext context = JAXBContext.newInstance(PersonListWrapper.class);
 			Unmarshaller um = context.createUnmarshaller();
 			
@@ -226,6 +232,31 @@ public class MainApp extends Application {
 		} catch (JAXBException ex) {
 			showExceptionAlert(ex);
 		}				
+		
+		
+	}
+	
+	public void showBirthdayStatistics() {		
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(MainApp.class.getResource("view/BirthdayStatistics.fxml"));
+			AnchorPane page = (AnchorPane) loader.load();
+			Stage dialogStage = new Stage();
+	        dialogStage.setTitle("Birthday Statistics");
+	        dialogStage.initModality(Modality.WINDOW_MODAL);
+	        dialogStage.initOwner(primaryStage);
+	        Scene scene = new Scene(page);
+	        dialogStage.setScene(scene);
+
+	        // Set the persons into the controller.
+	        BirthdayStatisticsController controller = loader.getController();
+	        controller.setPersonData(personData);
+
+	        dialogStage.show();
+
+		} catch (IOException ex) {
+			showExceptionAlert(ex);
+		}
 		
 		
 	}
