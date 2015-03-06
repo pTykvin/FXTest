@@ -1,0 +1,46 @@
+.root {
+    -fx-background-color: #F0F2F3;
+}
+
+.button {
+	-fx-background-color: #2995CB;
+	-fx-effect: dropshadow(three-pass-box, rgba(216,218,219,1.0), 2, 0, 0, 1); 
+	-fx-border-color: #1F7099;
+	-fx-text-fill: white;
+	-fx-background-radius: 0 0 7 7;
+	-fx-border-radius: 0 0 7 7;
+	-fx-font-size: 15pt;
+    -fx-font-family: "Segoe UI Semibold";
+    -fx-min-width: 200;
+}
+
+.button:pressed {
+	-fx-background-color: #39A5DB;
+}
+
+.item {
+	-fx-border-color: #D7D9DB;
+	-fx-border-radius: 5;
+}
+
+.menu {
+	-fx-background-color: #3D454C;
+}
+
+.menu_item {
+	-fx-background-color: #3D454C;
+	-fx-background-radius: 0;
+	-fx-border-radius: 0;
+	-fx-font-size: 12pt;
+	-fx-text-fill: white;
+    -fx-font-family: "Segoe UI Semibold";
+}
+
+.menu_item:selected {
+	-fx-background-color: #292E33;
+}
+
+#purchase {
+	-fx-border-color: #D7D9DB;
+	-fx-background-color: #FFFFFF;
+}

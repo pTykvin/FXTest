@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane styleClass="root" stylesheets="@ButtonStyle.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <left>
+      <AnchorPane BorderPane.alignment="CENTER">
+         <children>
+            <GridPane hgap="5.0" prefHeight="500.0" prefWidth="500.0" vgap="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+                <ColumnConstraints hgrow="SOMETIMES" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+                <RowConstraints vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Pane styleClass="item" />
+                  <Pane styleClass="item" GridPane.columnIndex="1" />
+                  <Pane styleClass="item" GridPane.columnIndex="2" />
+                  <Pane styleClass="item" GridPane.columnIndex="3" />
+                  <Pane styleClass="item" GridPane.columnIndex="4" />
+                  <Pane styleClass="item" GridPane.rowIndex="1" />
+                  <Pane styleClass="item" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Pane styleClass="item" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Pane styleClass="item" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                  <Pane styleClass="item" GridPane.columnIndex="4" GridPane.rowIndex="1" />
+                  <Pane styleClass="item" GridPane.rowIndex="2" />
+                  <Pane styleClass="item" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Pane styleClass="item" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <Pane styleClass="item" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                  <Pane styleClass="item" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <Pane styleClass="item" GridPane.rowIndex="3" />
+                  <Pane styleClass="item" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Pane styleClass="item" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Pane styleClass="item" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+                  <Pane styleClass="item" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                  <Pane styleClass="item" GridPane.rowIndex="4" />
+                  <Pane styleClass="item" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Pane styleClass="item" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                  <Pane styleClass="item" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+                  <Pane styleClass="item" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+               </children>
+               <padding>
+                  <Insets right="5.0" />
+               </padding>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane BorderPane.alignment="CENTER">
+         <children>
+            <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <center>
+                  <Pane id="purchase" BorderPane.alignment="CENTER" />
+               </center>
+               <bottom>
+                  <AnchorPane BorderPane.alignment="CENTER">
+                     <children>
+                  				<Button mnemonicParsing="false" text="Button" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </bottom>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </center>
+   <bottom>
+      <HBox styleClass="menu" BorderPane.alignment="CENTER">
+         <children>
+            <ToggleButton mnemonicParsing="false" styleClass="menu_item" text="Menu 1">
+               <toggleGroup>
+                  <ToggleGroup fx:id="bottom_menu" />
+               </toggleGroup>
+            </ToggleButton>
+            <ToggleButton mnemonicParsing="false" styleClass="menu_item" text="Menu 2" toggleGroup="$bottom_menu" />
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
